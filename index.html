@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">      
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Taking App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- //  in script we use type type ="" it is used here for import and export -->
+    <link rel="stylesheet" href="css/design.css">;
+    <script type="module" src="scripts/controllers/notes-controller.js"></script>  
+</head>
+<body>
+    <!-- <i class="fa-solid fa-trash" style="color: #181716;"></i> -->
+    
+    <div class = "container">
+
+        <h1 class = "alert alert-info ">Notes Taking App</h1>
+        <div class="form-group">
+        <label >Id</label>
+        <!-- //class ="form-control"  is used for streching the input box on the browser -->
+        <input type="text" id="id"  class="form-control" placeholder="Type Id here" >    
+    </div>
+
+    <div class="form-group">
+        <label >Title</label>
+        <input type="text" id="title" class="form-control" placeholder="Type Title here" >
+    </div>
+
+    <div class="form-group">
+        <label >Desc</label>
+        <textarea  class ="form-control" id="desc" cols="20" rows="5" placeholder="Type Desc Here"></textarea>
+        
+    </div>
+
+    <div class="form-group">
+        <label >Completion Date</label>
+        <input type="date" id="cdate" class="form-control"  >
+    </div>
+
+    <div class="form-group">
+        <label >Importance</label>
+        <input type="color" id="importance" class="form-control" >
+    </div>
+
+<div>
+    <button id="add" class="btn btn-primary">Add</button>
+    <button  id ="delete" class="btn btn-danger">Delete</button>
+    <button  id="search" class="btn btn-info" >Search</button>
+    <button class="btn btn-success">Sort</button>
+    <button  id="update"  class="btn btn-warning">Update</button>
+    <button class="btn btn-success">Save</button>
+    <button class="btn btn-secondary">Load</button>
+    <button class="btn btn-danger">Clear</button>
+    <button class="btn btn-success">Save To Server</button>
+    <button class="btn btn-secondary">Load To Server</button>
+    <div id="searchToggle" class="search">
+        <label for="">
+            <select >
+                <option value="">id</option>
+                <option value="">title</option>
+                <option value="">desc</option>
+            </select>
+        </label>
+    </div>
+</div>
+
+<div>
+    <h3>Total Records <span id = "total"></span>  Mark Records <span id = "marktotal"></span>  UnMark Records <span id = "unmarktotal"></span></h3>
+</div>
+
+<!-- table>thead>tr>th*6+tbody  -->
+<table class="table table-bordered">
+    <thead  class="table-dark">
+        <tr>
+            <th id="heading" >Id</th>
+            <th>Title</th>
+            <th>Desc</th>
+            <th>Completion Date </th>
+            <th>Importance</th>
+            <th>operations</th>
+           
+        </tr>
+    </thead>
+    <tbody id="notes">
+        <!-- dynamic Records will be come here -->
+    </tbody>
+</table>
+
+
+</div>
+    
+</body>
+</html>
